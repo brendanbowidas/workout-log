@@ -22,11 +22,16 @@ class WorkoutsController < ApplicationController
     end
     
     def edit 
-        
+        @workout = Workout.find(params[:id])
     end
     
      def update 
-         
+         @workout = Workout.find(params[:id])
+            if @workout.save
+                redirect_to @workout
+            else
+                render 'update'
+            end
      end
      
      def destroy 

@@ -1,8 +1,23 @@
-<%= simple_form_for(@workout, html:{ class: "form-horizontal" }) do |f| %>
-<%= f.input :date, label: "Date" %>
-<%= f.input :workout, label: "What body part did you train?", input_html: { class: "form-control" } %>
-<%= f.input :comments, label: "Comments", input_html: { class: "form-control" } %>
-<%= f.input :length, label: "Workout Length", input_html: { class: "form-control" } %>
-<br>
-<%= f.button :submit %>
-<% end %>
+
+<div class="container text-center">
+    <div class="row">
+        <div class= "col-xs-4 col-xs-offset-4">
+    <%= simple_form_for(@workout, html: { class: "form-horizontal" }) do |f| %>
+        <div class="field">
+            <%= f.input :date, label: "Date" %>
+        </div>
+        <div class="field">
+            <%= f.input :workout, label: "What body part(s) did you train?", input_html: { class: "form-control" } %>
+        </div>
+        <div class="field">
+            <%= f.input :comments, label: "Comments", input_html: { class: "form-control" } %>
+        </div>
+        <div class="field">
+        <%= f.input :length, label: "Workout Length", input_html: { class: "form-control" } %>
+        </div>
+        <br>
+        <%= f.button :submit %>
+    <% end %>
+      </div>
+    </div>
+</div>

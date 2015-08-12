@@ -1,10 +1,20 @@
-<h1>My Workouts</h1>
-<%= div_for @workouts %>
-<% @workouts.each do |w| %>
-<h2><%= w.workout %></h2>
-<p><%= w.date %></p>
-<p><%= w.comments %></p>
-<p><%=w.length %></p>
+
+<div class="container text-center">
+    <h1>My Workouts</h1>
+    
+    <%= div_for @workouts, class: "container" %>
+    
+    <% @workouts.each do |w| %>
+    
+    <h2><%= w.workout %></h2>
+    
+    <p><%= w.date %></p>
+    
+    <p><%= w.comments %></p>
+    
+    <p><%=w.length %></p>
+    <%= link_to "View Workout", workout_path(w), class: "btn btn-primary" %>
+    <% end %>
+    </div>
 </div>
 
-<% end %>
