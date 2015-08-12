@@ -1,10 +1,13 @@
 class WorkoutsController < ApplicationController
+    
+    before_action :find_workout, only: [:show, :edit, :update, :destroy]
+    
     def index 
         @workouts = Workout.all
     end
     
     def show 
-        @workout = Workout.find(params[:id])
+       
     end
     
     def new
@@ -22,11 +25,11 @@ class WorkoutsController < ApplicationController
     end
     
     def edit 
-        @workout = Workout.find(params[:id])
+       
     end
     
      def update 
-         @workout = Workout.find(params[:id])
+        
             if @workout.save
                 redirect_to @workout
             else
@@ -35,7 +38,8 @@ class WorkoutsController < ApplicationController
      end
      
      def destroy 
-         
+         @workout.destroy
+         redirect_to root_path
      end
      
      private
@@ -45,6 +49,6 @@ class WorkoutsController < ApplicationController
      end
      
      def find_workout 
-            
+            @workout = Workout.find(params[:id])
      end
 end
