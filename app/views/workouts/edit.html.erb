@@ -1,2 +1,7 @@
 <h1 class="text-center">Edit Workout</h1>
 <%= render partial: "form" %>
+
+<%= link_to "Delete Workout",  workout_path(@workout), class: "btn btn-danger text-center delete-button",  method: :delete, data:  {confirm: "Are you sure you want to delete?" } %><br>
+      </div>
+    </div>
+</div>

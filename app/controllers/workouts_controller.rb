@@ -30,10 +30,10 @@ class WorkoutsController < ApplicationController
     
      def update 
         
-            if @workout.save
+            if @workout.update(workout_params)
                 redirect_to @workout
             else
-                render 'update'
+                render 'edit'
             end
      end
      
