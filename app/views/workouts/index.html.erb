@@ -1,1 +1,10 @@
-<h1>this is the workouts index</h1>
+<h1>My Workouts</h1>
+<%= div_for @workouts %>
+<% @workouts.each do |w| %>
+<h2><%= w.workout %></h2>
+<p><%= w.date %></p>
+<p><%= w.comments %></p>
+<p><%=w.length %></p>
+</div>
+
+<% end %>
