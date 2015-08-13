@@ -1,9 +1,27 @@
-<div class="workout">
-    <p><%= @workout.date %></p>
-    <p><%= @workout.workout %></p>
-    <p><%= @workout.length %></p>
-    <p><%= @workout.comments %></p><br>
-    <%= link_to "Edit", edit_workout_path %><br>
-    <%= link_to "Back", root_path %>
+<div class="container text-center">
+    <div class="row">
+        <div class= "col-xs-4 col-xs-offset-4">     
+            <div class="workout">
+                <p> <strong>Date:</strong> <%= @workout.date.strftime("%m/%d/%Y")  %></p>
+                <p> <strong>Body Part(s)</strong>: <%= @workout.workout %></p>
+                <p> <strong>Duration:</strong> <%= @workout.length %></p>
+                <p> <strong>Comments:</strong> <%= @workout.comments %></p><br>
+             
+            
+            <div id="exercises text-center">
+                <h2>Exercises</h2>
+                <%= render @workout.exercises %>
+                
+                <h3>Add an Exercise</h3>
+                <%= render "exercises/form" %>
+            </div>
+            
+                
+                <%= link_to "Edit", edit_workout_path %><br>
+                <%= link_to "Back", root_path %>
+                    </div>
+                </div>
+            </div>
+                     
     
 </div>
