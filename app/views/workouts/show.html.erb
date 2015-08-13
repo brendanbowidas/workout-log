@@ -2,6 +2,7 @@
     <div class="row">
         <div class= "col-xs-4 col-xs-offset-4">     
             <div class="workout">
+                <%= image_tag @workout.image.url(:thumb) %>
                 <p> <strong>Date:</strong> <%= @workout.date.strftime("%m/%d/%Y")  %></p>
                 <p> <strong>Body Part(s)</strong>: <%= @workout.workout %></p>
                 <p> <strong>Duration:</strong> <%= @workout.length %></p>
