@@ -8,11 +8,11 @@
     
     <h2><%= w.workout %></h2>
     
-    <p><%= w.date %></p>
+    <p><strong>Date:</strong> <%= w.date.strftime("%m/%d/%Y") %></p>
     
-    <p><%= w.comments %></p>
+    <p><strong>Comments:</strong> <%= w.comments %></p>
     
-    <p><%=w.length %></p>
+    <p><strong>Duration:</strong> <%=w.length %></p>
     <%= link_to "View Workout", workout_path(w), class: "btn btn-primary" %>
     <% end %>
     </div>

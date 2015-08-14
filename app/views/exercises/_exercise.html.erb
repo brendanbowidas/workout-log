@@ -1,4 +1,4 @@
 
 <h3><%= exercise.name %></h3>
 <p><%= exercise.sets %> sets of <%= exercise.reps %> reps</p>
-
+<%= link_to "Edit", edit_workout_exercise_path(@workout, @workout.exercises) %>

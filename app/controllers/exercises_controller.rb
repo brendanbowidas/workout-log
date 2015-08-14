@@ -5,4 +5,9 @@ class ExercisesController < ApplicationController
         
         redirect_to workout_path(@workout)
     end
+    
+    def edit 
+         
+    end
+    
 end
