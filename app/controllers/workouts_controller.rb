@@ -1,6 +1,7 @@
 class WorkoutsController < ApplicationController
     
     before_action :find_workout, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
     
     def index 
         @workouts = Workout.all
@@ -11,11 +12,11 @@ class WorkoutsController < ApplicationController
     end
     
     def new
-        @workout = Workout.new
+        @workout = current_user.workouts.build
     end
     
     def create 
-        @workout = Workout.new(workout_params)
+        @workout = current_user.workouts.build(workout_params)
         if @workout.save
             redirect_to @workout
             
