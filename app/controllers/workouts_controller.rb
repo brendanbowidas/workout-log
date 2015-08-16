@@ -12,7 +12,9 @@ class WorkoutsController < ApplicationController
     end
     
     def new
-        @workout = current_user.workouts.build
+       # @workout = current_user.workouts.build
+       @workout = Workout.new
+       @workout.user_id = current_user.id
     end
     
     def create 
